@@ -9,22 +9,31 @@
 </head>
 <body>
     <header>
-        <img src="src/assets/iconoAlura.png" alt="logotipo alura">
+        <img src="src/assets/iconoAlura.png" alt="logotipo alura" class="img-header">
     </header>
     <main class="container">
         <section class="content-encriptar">
-            <textarea name="txtAreaTexto" id="txtAreaTexto" placeholder="Ingrea el texto aqui"></textarea>
+            <textarea name="txtAreaTexto" id="txtAreaTexto" class="content-encriptar-textarea" placeholder="Ingresa el texto aqui" rows="9"></textarea>
         </section>
         <section class="content-botones">
-            <button onclick=mostrarEncriptado()>Encriptar</button>
-            <button onclick=mostrarDesencriptado()>Desencriptar</button>
+            <button onclick=mostrarEncriptado() class="botones encriptar">Encriptar</button>
+            <button onclick=mostrarDesencriptado() class="botones desencriptar">Desencriptar</button>
         </section>
         <section class="content-desencriptar">
-            <img src="src/images/muñeco.png" alt="imagen de buscar texto" id="desencriptar-imagen">
-            <h2 id="desencriptar-titulo">Ningún mensaje fue encontrado</h2>
-            <p id="desencriptar-parrafo">Ingresa el texto que desees encriptar o desencriptar</p>
+            <img src="src/images/muñeco.png" alt="imagen de buscar texto" id="desencriptar-imagen" class="content-desencriptar-imagen">
+            <h2 id="desencriptar-titulo" class="content-desencriptar-titulo">Ningún mensaje fue encontrado</h2>
+            <p id="desencriptar-parrafo" class="content-desencriptar-parrafo">Ingresa el texto que desees encriptar o desencriptar</p>
+            <p id="parrafo-copiado"></p>
         </section>
     </main>
+    <footer class="links-sociales">
+        <a href="https://github.com/SteveGongoraL" target="_blank" class="link">
+            <img src="src\assets\Github.svg" alt="Logotipo Github" class="logotipo">
+        </a>
+        <a href="https://www.linkedin.com/in/stevegongoral/" target="_blank" class="link">
+            <img src="src\assets\Linkedin.svg" alt="Logotipo Linkedin" class="logotipo">
+        </a>
+    </footer>
     <script src="src/js/scripts.js"></script>
 </body>
 </html>

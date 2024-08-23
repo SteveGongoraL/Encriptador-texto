@@ -1,13 +1,116 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* *{
     outline: 1px solid red;
+} */
+
+.img-header{
+    width: 8%;
+    margin: 0.6rem;
 }
 
+.container{
+    font-family: "Inter", sans-serif;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background: black; */
+}
+
+
 .content-encriptar{
-    background: blue;
+    /* background: blue; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.content-encriptar-textarea{
+    width: 80%;
+    margin: 2rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    resize: none;
+    line-height: 1.75;
+}
+.content-encriptar-textarea::placeholder{
+    font-size: 1.25rem;
+    color: darkblue;
+}
+.content-encriptar-textarea:focus{
+    border-color: darkblue;
+    outline: none;
+}
+
 .content-botones{
-    background: green;
+    /* background: green; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.botones{
+    width: 80%;
+    margin: 0.5rem;
+    height: 2.8rem;
+    border-radius: 0.9rem;
+    font-size: 1rem;
+}
+.encriptar{
+    color: white;
+    background: darkblue;
+    border-color: white;
+}
+.desencriptar{
+    color: darkblue;
+    background: white;
+    border-color: darkblue;
+}
+
 .content-desencriptar{
-    background: red;
+    /* background: red; */
+    min-height: 10.62rem;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: 1.56rem 0 1.56rem 0;
+    padding: 0 1.25rem 0 1.25rem;
+    border-radius: 1.87rem;
+    text-align: center;
+    box-shadow: 3px 5px 11px 6.5px #e6e5e5;
+}
+
+.content-desencriptar-imagen{
+    display: none;
+}
+.content-desencriptar-titulo{
+    font-size: 1.7rem;
+    margin-bottom: 0;
+}
+.content-desencriptar-parrafo{
+    font-size: 1.1rem;
+}
+#parrafo-copiado{
+    display: none;
+    color: #04a004;
+}
+
+.links-sociales{
+    background-color: darkblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 1.5rem;
+}
+
+.link{
+    margin: 0.3rem;
+    width: 11%;
+}
+.logotipo{
+    width: 100%;
 }
