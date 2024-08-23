@@ -16,13 +16,13 @@
             <textarea name="txtAreaTexto" id="txtAreaTexto" placeholder="Ingrea el texto aqui"></textarea>
         </section>
         <section class="content-botones">
-            <button onclick = "mostrarEncriptado()">Encriptar</button>
-            <button onclick = "mostrarDesencriptado()">Desencriptar</button>
+            <button onclick=mostrarEncriptado()>Encriptar</button>
+            <button onclick=mostrarDesencriptado()>Desencriptar</button>
         </section>
         <section class="content-desencriptar">
-            <img src="src/images/muñeco.png" alt="imagen de buscar texto">
-            <h2>Ningún mensaje fue encontrado</h2>
-            <p>Ingresa el texto que desees encriptar o desencriptar</p>
+            <img src="src/images/muñeco.png" alt="imagen de buscar texto" id="desencriptar-imagen">
+            <h2 id="desencriptar-titulo">Ningún mensaje fue encontrado</h2>
+            <p id="desencriptar-parrafo">Ingresa el texto que desees encriptar o desencriptar</p>
         </section>
     </main>
     <script src="src/js/scripts.js"></script>
