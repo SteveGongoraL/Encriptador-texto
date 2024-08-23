@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="src\css\styles.css">
+    <title>Encriptador Texto</title>
+</head>
+<body>
+    <header>
+        <img src="src/assets/iconoAlura.png" alt="logotipo alura">
+    </header>
+    <main class="container">
+        <section class="content-encriptar">
+            <textarea name="txtAreaTexto" id="txtAreaTexto" placeholder="Ingrea el texto aqui"></textarea>
+        </section>
+        <section class="content-botones">
+            <button onclick = "mostrarEncriptado()">Encriptar</button>
+            <button onclick = "mostrarDesencriptado()">Desencriptar</button>
+        </section>
+        <section class="content-desencriptar">
+            <img src="src/images/muñeco.png" alt="imagen de buscar texto">
+            <h2>Ningún mensaje fue encontrado</h2>
+            <p>Ingresa el texto que desees encriptar o desencriptar</p>
+        </section>
+    </main>
+    <script src="src/js/scripts.js"></script>
+</body>
+</html>

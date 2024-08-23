@@ -1,0 +1,13 @@
+*{
+    outline: 1px solid red;
+}
+
+.content-encriptar{
+    background: blue;
+}
+.content-botones{
+    background: green;
+}
+.content-desencriptar{
+    background: red;
+}
