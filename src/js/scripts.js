@@ -81,8 +81,16 @@ function copiarAlPortapapeles(textoACopiar){
     // Api clipboard
     navigator.clipboard.writeText(textoACopiar).then(function(){
         console.log("Texto copiado");
+        msjCopiadoPortapapeles("parrafo-copiado","¡Texto copiado en el portapapeles!");
     }).catch(function(error){
         console.error("Error al copiar", error);
     });
     return;
+}
+
+// Mensaje copiado
+function msjCopiadoPortapapeles(idParrafoAMostrar, textoAMostrar){
+    document.getElementById(idParrafoAMostrar).style.display = "block";
+
+    cambiarTextoParrafo(idParrafoAMostrar, textoAMostrar);
 }
