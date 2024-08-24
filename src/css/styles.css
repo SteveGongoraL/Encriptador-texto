@@ -5,8 +5,10 @@
 } */
 
 body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-family: "Inter", sans-serif;
-    /* background: black; */
 }
 
 /* Header section */
@@ -31,13 +33,12 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background: black; */
+    flex: 1;
 }
 
 
 /* Ingresar texto section */
 .content-encriptar{
-    /* background: blue; */
     width: 100%;
     display: flex;
     align-items: center;
@@ -66,7 +67,6 @@ body{
 
 /* Botones section */
 .content-botones{
-    /* background: green; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -93,7 +93,6 @@ body{
 
 /* Resultado section */
 .content-desencriptar{
-    /* background: red; */
     min-height: 10.62rem;
     width: 70%;
     display: flex;
@@ -112,9 +111,11 @@ body{
     margin-bottom: 0;
 }
 .content-desencriptar-parrafo{
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 .content-desencriptar-parrafo-copiado{
+    font-size: 1.3rem;
     display: none;
     color: #04a004;
 }
@@ -132,4 +133,44 @@ body{
 }
 .link-logotipo{
     width: 90%;
+}
+
+
+/* Media Queries */
+/* Vista Escritorio */
+@media (771px <= width){
+    .header-imagen{
+        width: 3%;
+        margin-left: 1rem;
+    }
+    .container{
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .content-encriptar{
+        width: 60%;
+    }
+    .content-botones{
+        width: 80%;
+        flex-direction: row;
+    }
+    .content-desencriptar{
+        align-items: center;
+        justify-content: center;
+        width: 20%;
+        min-height: 450px;
+    }
+    .content-desencriptar-imagen{
+        width: 80%;
+        display: block;
+    }
+}
+
+/* Vista tablet */
+@media (376px <= width <= 770px){
+    body{
+        /* height: 100vh; */
+        background-color: #04a004;
+    }
 }
