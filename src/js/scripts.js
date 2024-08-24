@@ -7,90 +7,117 @@ const politicaCifrar = [
 ];
 
 
+// Aceptar solo minusculas y sin acentos
+let textArea = document.getElementById("content-encriptar-textArea");
+
+textArea.addEventListener("input", function(){
+    const reglas = /[^a-z\s]/g;
+    if(reglas.test(this.value)) {
+        this.value = this.value.replace(reglas, ""); // Elimina caracteres no permitidos
+    }
+})
+
+
 // Funcion para el btn Encriptar
 function mostrarEncriptado(){
-    // Hacer el encriptado del texto y almacenarlo
-    let resultadoEncriptado = encriptarTexto("txtAreaTexto");
-    // Cambiar el texto del parrafo por el texto Encriptado
-    cambiarTextoParrafo("desencriptar-parrafo", resultadoEncriptado);
-    // Copiar al portapapeles
-    copiarAlPortapapeles(resultadoEncriptado);
-    // Limpiar el textArea y ocultar la imagen y titulo de la section de respuesta
-    clearAndHide();
+    // Validar el contenido del textArea
+    let textoAEvaluar = contenidoTextArea("content-encriptar-textArea");
+
+    if(textoAEvaluar !== null){
+        let resultadoEncriptado = encriptarTexto(textoAEvaluar); // Encriptar el texto
+        // Cambiar el texto del parrafo, limpiar textArea, ocultar elemntos y copiar en portapapeles
+        prepararAreaResultado("desencriptar-parrafo", resultadoEncriptado);
+    } else{
+        console.log("No hay texto a validar");
+    }
     return;
 }
+
 
 // Funcion para el btn Desencriptar
 function mostrarDesencriptado(){
-    // Hacer el encriptado del texto y almacenarlo
-    let resultadoDesencriptado = desencriptarTexto("txtAreaTexto");
-    // Cambiar el texto del parrafo por el texto Desencriptado
-    cambiarTextoParrafo("desencriptar-parrafo", resultadoDesencriptado);
-    // Copiar al portapapeles
-    copiarAlPortapapeles(resultadoDesencriptado);
-    // Limpiar el textArea y ocultar la imagen y titulo de la section de respuesta
-    clearAndHide();
+    // Validar el contenido del textArea
+    let textoAEvaluar = contenidoTextArea("content-encriptar-textArea");
+
+    if(textoAEvaluar !== null){
+        let resultadoDesencriptado = desencriptarTexto(textoAEvaluar); // Desencriptar texto
+        // Cambiar el texto del parrafo, limpiar textArea, ocultar elemntos y copiar en portapapeles
+        prepararAreaResultado("desencriptar-parrafo", resultadoDesencriptado);
+    } else{
+        console.log("No hay texto a validar");
+    }
     return;
 }
 
+
 // Encriptar el texto
-function encriptarTexto(idCampo){
-    let textoEncriptar = document.getElementById(idCampo).value;
+function encriptarTexto(textoEncriptar){
     for(const [letra, valor] of politicaCifrar){
         textoEncriptar = textoEncriptar.split(letra).join(valor);
     }
     return textoEncriptar;
 }
 
+
 // Desencriptar el texto
-function desencriptarTexto(idCampo){
-    let textoDesencriptar = document.getElementById(idCampo).value;
+function desencriptarTexto(textoDesencriptar){
     for(const [letra, valor] of politicaCifrar){
         textoDesencriptar = textoDesencriptar.split(valor).join(letra);
     }
     return textoDesencriptar;
 }
 
-// Funcion para preparar el desencriptado
-function clearAndHide(){
-    limpiarImput();
-    ocultarElementos();
+
+// Validar que el textArea tenga contenido
+function contenidoTextArea(idCampo){
+    let textObtenido = document.getElementById(idCampo).value;
+    
+    if(textObtenido === ""){
+        return null;
+    } else{
+        return textObtenido;
+    }
 }
 
+
+// Funcion para preparar el desencriptado
+function prepararAreaResultado(idElemento, textoResultado){
+    cambiarTextoParrafo(idElemento, textoResultado);
+    limpiarImput();
+    ocultarElementos();
+    copiarAlPortapapeles(textoResultado);
+}
 // Cambiar el texto
 function cambiarTextoParrafo(idElementoACambiar, textoACambiar){
     let parrafoACambiar = document.getElementById(idElementoACambiar);
     parrafoACambiar.innerHTML = textoACambiar;
     return;
 }
-
 // Limpiar el textarea
 function limpiarImput(){
-    document.getElementById("txtAreaTexto").value = "";
+    document.getElementById("content-encriptar-textArea").value = "";
     return;
 }
-
 // Ocultar elementos
 function ocultarElementos(){
     document.getElementById("desencriptar-imagen").style.display = "none";
     document.getElementById("desencriptar-titulo").style.display = "none";
 }
-
 // Copiar en el portapapeles
 function copiarAlPortapapeles(textoACopiar){
     // Api clipboard
     navigator.clipboard.writeText(textoACopiar).then(function(){
-        console.log("Texto copiado");
-        msjCopiadoPortapapeles("parrafo-copiado","¡Texto copiado en el portapapeles!");
+        msjCopiadoPortapapeles("desencriptar-parrafo-copiado","¡Texto copiado en el portapapeles!");
     }).catch(function(error){
         console.error("Error al copiar", error);
     });
     return;
 }
-
 // Mensaje copiado
 function msjCopiadoPortapapeles(idParrafoAMostrar, textoAMostrar){
     document.getElementById(idParrafoAMostrar).style.display = "block";
 
     cambiarTextoParrafo(idParrafoAMostrar, textoAMostrar);
 }
+
+
