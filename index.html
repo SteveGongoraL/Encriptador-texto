@@ -4,34 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="src\css\styles.css">
     <title>Encriptador Texto</title>
 </head>
 <body>
-    <header>
-        <img src="src/assets/iconoAlura.png" alt="logotipo alura" class="img-header">
+    <header class="header">
+        <img src="src/assets/iconoAlura.png" alt="logotipo alura" class="header-imagen">
+        <h1 class="header-titulo">Encriptador de texto</h1>
     </header>
     <main class="container">
         <section class="content-encriptar">
-            <textarea name="txtAreaTexto" id="txtAreaTexto" class="content-encriptar-textarea" placeholder="Ingresa el texto aqui" rows="9"></textarea>
+            <textarea name="txtAreaTexto" id="content-encriptar-textArea" class="content-encriptar-textarea" placeholder="Ingresa el texto aqui" rows="9"></textarea>
+            <p id="content-encriptar-parrafo"><i class="fa-solid fa-circle-exclamation"></i> Solo letras minúsculas y sin acentos</p>
         </section>
         <section class="content-botones">
-            <button onclick=mostrarEncriptado() class="botones encriptar">Encriptar</button>
-            <button onclick=mostrarDesencriptado() class="botones desencriptar">Desencriptar</button>
+            <button onclick=mostrarEncriptado() class="content-botones-encriptar">Encriptar</button>
+            <button onclick=mostrarDesencriptado() class="content-botones-desencriptar">Desencriptar</button>
         </section>
         <section class="content-desencriptar">
             <img src="src/images/muñeco.png" alt="imagen de buscar texto" id="desencriptar-imagen" class="content-desencriptar-imagen">
             <h2 id="desencriptar-titulo" class="content-desencriptar-titulo">Ningún mensaje fue encontrado</h2>
+            <p id="desencriptar-parrafo-copiado" class="content-desencriptar-parrafo-copiado"></p>
             <p id="desencriptar-parrafo" class="content-desencriptar-parrafo">Ingresa el texto que desees encriptar o desencriptar</p>
-            <p id="parrafo-copiado"></p>
         </section>
     </main>
     <footer class="links-sociales">
-        <a href="https://github.com/SteveGongoraL" target="_blank" class="link">
-            <img src="src\assets\Github.svg" alt="Logotipo Github" class="logotipo">
+        <a href="https://github.com/SteveGongoraL" target="_blank">
+            <img src="src\assets\Github.svg" alt="Logotipo Github" class="link-logotipo">
         </a>
-        <a href="https://www.linkedin.com/in/stevegongoral/" target="_blank" class="link">
-            <img src="src\assets\Linkedin.svg" alt="Logotipo Linkedin" class="logotipo">
+        <a href="https://www.linkedin.com/in/stevegongoral/" target="_blank">
+            <img src="src\assets\Linkedin.svg" alt="Logotipo Linkedin" class="link-logotipo">
         </a>
     </footer>
     <script src="src/js/scripts.js"></script>
