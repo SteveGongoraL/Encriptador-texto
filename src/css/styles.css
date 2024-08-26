@@ -18,12 +18,11 @@ body{
     gap: 1rem;
 }
 .header-imagen{
-    width: 10%;
-    height: 10%;
+    width: 2.5rem;
     margin-left: 1rem;
 }
 .header-titulo{
-    font-size: clamp(1.5rem, 1.5rem, 2rem); /* minimo, preferido, maximo */
+    font-size: clamp(1.25rem, 1.5rem, 2rem); /* minimo, preferido, maximo */
 }
 
 
@@ -60,6 +59,9 @@ body{
 .content-encriptar-textarea:focus{
     border-color: darkblue;
     outline: none;
+}
+.content-encriptar-parrafo{
+    text-align: center;
 }
 .fa-circle-exclamation{
     color: darkblue;
@@ -139,10 +141,6 @@ body{
 /* Media Queries */
 /* Vista Escritorio */
 @media (771px <= width){
-    .header-imagen{
-        width: 3%;
-        margin-left: 1rem;
-    }
     .container{
         flex-direction: row;
         justify-content: center;
@@ -169,8 +167,11 @@ body{
 
 /* Vista tablet */
 @media (480px <= width <= 770px){
-    body{
-        /* height: 100vh; */
+    /* body{
         background-color: #04a004;
+    } */
+    .content-botones{
+        width: 80%;
+        flex-direction: row;
     }
 }
