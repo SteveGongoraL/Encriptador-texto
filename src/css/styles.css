@@ -80,16 +80,17 @@ body{
     height: 2.8rem;
     border-radius: 0.9rem;
     font-size: 1rem;
+    cursor: pointer;
 }
 .content-botones-encriptar{
     color: white;
     background: darkblue;
-    border-color: white;
+    border: 2px solid white;
 }
 .content-botones-desencriptar{
     color: darkblue;
     background: white;
-    border-color: darkblue;
+    border: 2px solid darkblue;
 }
 
 
