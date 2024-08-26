@@ -15,7 +15,7 @@ textArea.addEventListener("input", function(){
     if(reglas.test(this.value)) {
         this.value = this.value.replace(reglas, ""); // Elimina caracteres no permitidos
     }
-})
+});
 
 
 // Funcion para el btn Encriptar
@@ -28,10 +28,10 @@ function mostrarEncriptado(){
         // Cambiar el texto del parrafo, limpiar textArea, ocultar elemntos y copiar en portapapeles
         prepararAreaResultado("desencriptar-parrafo", resultadoEncriptado);
     } else{
-        console.log("No hay texto a validar");
+        restablecerElementos();
     }
     return;
-}
+};
 
 
 // Funcion para el btn Desencriptar
@@ -44,10 +44,10 @@ function mostrarDesencriptado(){
         // Cambiar el texto del parrafo, limpiar textArea, ocultar elemntos y copiar en portapapeles
         prepararAreaResultado("desencriptar-parrafo", resultadoDesencriptado);
     } else{
-        console.log("No hay texto a validar");
+        restablecerElementos();
     }
     return;
-}
+};
 
 
 // Encriptar el texto
@@ -56,7 +56,7 @@ function encriptarTexto(textoEncriptar){
         textoEncriptar = textoEncriptar.split(letra).join(valor);
     }
     return textoEncriptar;
-}
+};
 
 
 // Desencriptar el texto
@@ -65,7 +65,7 @@ function desencriptarTexto(textoDesencriptar){
         textoDesencriptar = textoDesencriptar.split(valor).join(letra);
     }
     return textoDesencriptar;
-}
+};
 
 
 // Validar que el textArea tenga contenido
@@ -77,7 +77,7 @@ function contenidoTextArea(idCampo){
     } else{
         return textObtenido;
     }
-}
+};
 
 
 // Funcion para preparar el desencriptado
@@ -86,23 +86,23 @@ function prepararAreaResultado(idElemento, textoResultado){
     limpiarImput();
     ocultarElementos();
     copiarAlPortapapeles(textoResultado);
-}
+};
 // Cambiar el texto
 function cambiarTextoParrafo(idElementoACambiar, textoACambiar){
     let parrafoACambiar = document.getElementById(idElementoACambiar);
     parrafoACambiar.innerHTML = textoACambiar;
     return;
-}
+};
 // Limpiar el textarea
 function limpiarImput(){
     document.getElementById("content-encriptar-textArea").value = "";
     return;
-}
+};
 // Ocultar elementos
 function ocultarElementos(){
     document.getElementById("desencriptar-imagen").style.display = "none";
     document.getElementById("desencriptar-titulo").style.display = "none";
-}
+};
 // Copiar en el portapapeles
 function copiarAlPortapapeles(textoACopiar){
     // Api clipboard
@@ -112,12 +112,17 @@ function copiarAlPortapapeles(textoACopiar){
         console.error("Error al copiar", error);
     });
     return;
-}
+};
 // Mensaje copiado
 function msjCopiadoPortapapeles(idParrafoAMostrar, textoAMostrar){
     document.getElementById(idParrafoAMostrar).style.display = "block";
 
     cambiarTextoParrafo(idParrafoAMostrar, textoAMostrar);
-}
+};
 
-
+// Restablecer elementos
+function restablecerElementos(){
+    document.getElementById("desencriptar-titulo").style.display = "block";
+    document.getElementById("desencriptar-parrafo-copiado").style.display = "none";
+    document.getElementById("desencriptar-parrafo").innerText = "Ingresa el texto que desees encriptar o desencriptar";
+};
