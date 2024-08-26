@@ -168,7 +168,7 @@ body{
 }
 
 /* Vista tablet */
-@media (376px <= width <= 770px){
+@media (480px <= width <= 770px){
     body{
         /* height: 100vh; */
         background-color: #04a004;
