@@ -120,7 +120,8 @@ body{
     padding: 0 1.25rem 0 1.25rem;
     border-radius: 1.87rem;
     text-align: center;
-    /* box-shadow: 3px 5px 11px 6.5px #e6e5e5; */
+    align-items: center;
+    justify-content: center;
 }
 .content-desencriptar-imagen{
     display: none;
@@ -171,8 +172,6 @@ body{
         flex-direction: row;
     }
     .content-desencriptar{
-        align-items: center;
-        justify-content: center;
         width: 20%;
         min-height: 400px;
     }
@@ -184,8 +183,15 @@ body{
 
 /* Vista tablet */
 @media (480px <= width <= 770px){
+    .container{
+        gap: 3rem;
+    }
     .content-botones{
         width: 80%;
         flex-direction: row;
+    }
+    .content-desencriptar-imagen{
+        width: 30%;
+        display: block;
     }
 }
