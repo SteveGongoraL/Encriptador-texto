@@ -1,7 +1,9 @@
 # Encriptador de Texto
 Este proyecto es una aplicación web que permite encriptar y desencriptar texto utilizando un conjunto específico de reglas. El usuario ingresa un texto en un campo de texto y la aplicación convierte el texto según las reglas definidas. También se puede desencriptar el texto encriptado utilizando la misma aplicación.
 
-[![juego](https://img.shields.io/badge/Visita_la_pagina-efd81d?style=for-the-badge&FontColor=black&color=DD4C80)](https://stevegongoral.github.io/Encriptador-texto/)
+<a href="https://stevegongoral.github.io/Encriptador-texto/" target="_blank">
+    <img src="https://img.shields.io/badge/Visita_la_pagina-efd81d?style=for-the-badge&FontColor=black&color=DD4C80" alt="link al encriptador">
+</a>
 
 ## Características
 - **Encriptar texto**: Convierte un texto utilizando un conjunto de reglas predefinidas.
