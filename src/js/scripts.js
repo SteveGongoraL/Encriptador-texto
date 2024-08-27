@@ -11,7 +11,7 @@ const politicaCifrar = [
 let textArea = document.getElementById("content-encriptar-textArea");
 
 textArea.addEventListener("input", function(){
-    const reglas = /[^a-z\s]/g;
+    const reglas = /[^a-zñ\s]/g;
     if(reglas.test(this.value)) {
         this.value = this.value.replace(reglas, ""); // Elimina caracteres no permitidos
     }
@@ -21,7 +21,7 @@ textArea.addEventListener("input", function(){
 // Funcion para el btn Encriptar
 function mostrarEncriptado(){
     // Validar el contenido del textArea
-    let textoAEvaluar = contenidoTextArea("content-encriptar-textArea");
+    const textoAEvaluar = contenidoTextArea("content-encriptar-textArea");
 
     if(textoAEvaluar !== null){
         let resultadoEncriptado = encriptarTexto(textoAEvaluar); // Encriptar el texto
@@ -37,7 +37,7 @@ function mostrarEncriptado(){
 // Funcion para el btn Desencriptar
 function mostrarDesencriptado(){
     // Validar el contenido del textArea
-    let textoAEvaluar = contenidoTextArea("content-encriptar-textArea");
+    const textoAEvaluar = contenidoTextArea("content-encriptar-textArea");
 
     if(textoAEvaluar !== null){
         let resultadoDesencriptado = desencriptarTexto(textoAEvaluar); // Desencriptar texto
@@ -52,25 +52,23 @@ function mostrarDesencriptado(){
 
 // Encriptar el texto
 function encriptarTexto(textoEncriptar){
-    for(const [letra, valor] of politicaCifrar){
-        textoEncriptar = textoEncriptar.split(letra).join(valor);
-    }
-    return textoEncriptar;
+    return politicaCifrar.reduce((acc, [letra, valor]) => {
+        return acc.split(letra).join(valor);
+    }, textoEncriptar);
 };
 
 
 // Desencriptar el texto
 function desencriptarTexto(textoDesencriptar){
-    for(const [letra, valor] of politicaCifrar){
-        textoDesencriptar = textoDesencriptar.split(valor).join(letra);
-    }
-    return textoDesencriptar;
+    return politicaCifrar.reduce((acc, [letra, valor]) => {
+        return acc.split(valor).join(letra);
+    }, textoDesencriptar);
 };
 
 
 // Validar que el textArea tenga contenido
 function contenidoTextArea(idCampo){
-    let textObtenido = document.getElementById(idCampo).value;
+    const textObtenido = document.getElementById(idCampo).value;
     
     if(textObtenido === ""){
         return null;
