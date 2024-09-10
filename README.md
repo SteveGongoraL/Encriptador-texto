@@ -29,3 +29,6 @@ Este proyecto es una aplicación web que permite encriptar y desencriptar texto 
 1. Ingresa el texto que deseas encriptar en el área de texto. Asegúrate de ingresar solo letras minúsculas y sin acentos.
 2. Haz clic en "Encriptar" para convertir el texto o en "Desencriptar" para revertir el texto encriptado.
 3. El resultado se mostrará en el área correspondiente y se copiará automáticamente al portapapeles.
+
+## Demo 🏆
+<img src="https://github.com/user-attachments/assets/d990a909-649b-4cc6-8690-54eae98d02e7" alt="Gif del Encriptador" width="500" loading="lazy"/>
