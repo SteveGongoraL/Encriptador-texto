@@ -31,4 +31,4 @@ Este proyecto es una aplicación web que permite encriptar y desencriptar texto 
 3. El resultado se mostrará en el área correspondiente y se copiará automáticamente al portapapeles.
 
 ## Demo 🏆
-<img src="https://github.com/user-attachments/assets/d990a909-649b-4cc6-8690-54eae98d02e7" alt="Gif del Encriptador" width="500" loading="lazy"/>
+<img src="https://github.com/user-attachments/assets/2eb190cd-aaef-4018-8a03-b4af17c157a1" alt="Gif del Encriptador" height=400px loading="lazy"/>
